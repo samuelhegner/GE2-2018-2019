@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -228,8 +228,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e73891cf7fba2094184ab63b6844ba2f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
@@ -320,8 +320,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3581c3557bc747468f5ba37993d01c8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   prey: {fileID: 1206003791}
 --- !u!114 &156987130
 MonoBehaviour:
@@ -333,8 +333,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca92bec022b87484d845061c772416ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   weight: 1
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
@@ -349,8 +349,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93b686907bcc84849a099eafe80809c3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   weight: 1
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
@@ -366,8 +366,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2d3e9354448df34b91efbbf2cc89a6b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   updatesPerSecond: 5
 --- !u!1 &318480650
 GameObject:
@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 1206003800}
   - component: {fileID: 1206003799}
   - component: {fileID: 1206003798}
+  - component: {fileID: 1206003801}
   m_Layer: 0
   m_Name: prey
   m_TagString: Untagged
@@ -562,8 +563,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a08b6db94000fe46b8218afdac93f79, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   weight: 1
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
@@ -650,8 +651,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e73891cf7fba2094184ab63b6844ba2f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   force: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
@@ -670,8 +671,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca92bec022b87484d845061c772416ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   weight: 1
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
@@ -686,8 +687,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d9b193536e69b149a01c7a56b998773, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   predator: {fileID: 156987123}
 --- !u!114 &1206003800
 MonoBehaviour:
@@ -696,12 +697,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206003791}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2d3e9354448df34b91efbbf2cc89a6b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   updatesPerSecond: 5
+--- !u!114 &1206003801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206003791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb106e61d5ec0e4b9cc414d6753407c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updatesPerSeconds: 5
+  coroutineRunning: 0
 --- !u!1 &1707968510
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,8 +744,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ec7dafc841c55243b6afc828c1daf51, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   waypoints: []
   next: 0
   looped: 1

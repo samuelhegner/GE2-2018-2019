@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class PatrolState : State
+class PatrolState : AiState
 {
     public override void Enter()
     {
@@ -25,7 +25,7 @@ class PatrolState : State
     }
 }
 
-public class DefendState : State
+public class DefendState : AiState
 {
     public override void Enter()
     {
@@ -58,7 +58,7 @@ public class PreyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<StateMachine>().ChangeState(new PatrolState());   
+        GetComponent<LabTest>().ChangeState(new PatrolState());   
     }
 
     // Update is called once per frame
