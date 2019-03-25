@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AiState {
+public abstract class AiState
+{
     public LabTest owner;
     public virtual void Enter() { }
     public virtual void Think() { }
@@ -25,12 +26,14 @@ public class LabTest : MonoBehaviour
         StartCoroutine(Think());
     }
 
-    public void ChangeStateDelay(AiState newState, float delay) {
+    public void ChangeStateDelay(AiState newState, float delay)
+    {
         coroutine = ChangeStateCoroutine(newState, delay);
         StartCoroutine(coroutine);
     }
 
-    public void StopChangeStateDelay() {
+    public void StopChangeStateDelay()
+    {
         if (coroutineRunning)
         {
             StopCoroutine(coroutine);
@@ -41,14 +44,16 @@ public class LabTest : MonoBehaviour
         }
     }
 
-    IEnumerator ChangeStateCoroutine(AiState newState, float delay) {
+    IEnumerator ChangeStateCoroutine(AiState newState, float delay)
+    {
         coroutineRunning = true;
         yield return new WaitForSeconds(delay);
         ChangeState(newState);
         coroutineRunning = false;
     }
 
-    public void ReturnToPreviousState() {
+    public void ReturnToPreviousState()
+    {
         if (previous != null)
         {
             ChangeState(previous);
@@ -59,10 +64,12 @@ public class LabTest : MonoBehaviour
         }
     }
 
-    public void ChangeState(AiState newState) {
+    public void ChangeState(AiState newState)
+    {
         previous = current;
 
-        if (current != null) {
+        if (current != null)
+        {
             current.Exit();
         }
 
@@ -71,16 +78,17 @@ public class LabTest : MonoBehaviour
         current.Enter();
     }
 
-    IEnumerator Think() {
+    IEnumerator Think()
+    {
         yield return new WaitForSeconds(Random.Range(0, 0.5f));
 
-        while (true) {
-            if (current != null) {
+        while (true)
+        {
+            if (current != null)
+            {
                 current.Think();
             }
             yield return new WaitForSeconds(1f / (float)updatesPerSeconds);
         }
     }
-
- 
 }
