@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class AttackState : State
+public class AttackState : State
 {
     public override void Enter()
     {
         owner.GetComponent<Pursue>().target = owner.GetComponent<PredatorController>().prey.GetComponent<Boid>();
-
         owner.GetComponent<Pursue>().enabled = true;
     }
 
@@ -17,7 +16,7 @@ class AttackState : State
             owner.GetComponent<PredatorController>().prey.transform.position,
             owner.transform.position) < 10)
         {
-            owner.ChangeState(new DefendState());
+            owner.ChangeState(new FleeState());
         }
     }
 
@@ -31,7 +30,7 @@ public class FleeState : State
 {
     public override void Enter()
     {
-        owner.GetComponent<Flee>().target = owner.GetComponent<PredatorController>().prey.transform.position;
+        owner.GetComponent<Flee>().targetGameObject = owner.GetComponent<PredatorController>().prey;
         owner.GetComponent<Flee>().enabled = true;
     }
 
@@ -39,19 +38,15 @@ public class FleeState : State
     {
         if (Vector3.Distance(
             owner.GetComponent<PredatorController>().prey.transform.position,
-            owner.transform.position) > 40)
+            owner.transform.position) > 30)
         {
-            owner.ChangeState(new PatrolState());
+            owner.ChangeState(new AttackState());
         }
     }
-
     public override void Exit()
     {
         owner.GetComponent<Flee>().enabled = false;
     }
-
-
-
 }
 
 public class PredatorController : MonoBehaviour
@@ -66,6 +61,6 @@ public class PredatorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
